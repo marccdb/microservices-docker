@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    backend:
+        build: backend\src\backend
+        image: app-backend
+        ports: 
+            - 8080:8080
+
+
+    frontend: 
+        build: frontend\src\frontend
+        image: app-frontend
+        ports: 
+            - 8000:8000
+        environment:
+            - BACKEND_HOST=backend
